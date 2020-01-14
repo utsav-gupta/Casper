@@ -12,7 +12,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
+  overflow: hidden;
 }
 
 /*========================
@@ -30,8 +31,8 @@ body {
   outline: 1px solid transparent;
   border-radius: 50%;
   border: 1px solid #bdc3c7;
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   background: none;
 }
 .clap:after {
@@ -41,8 +42,8 @@ body {
   left: 0;
   display: block;
   border-radius: 50%;
-  width: 79px;
-  height: 79px;
+  width: 49px;
+  height: 49px;
 }
 .clap:hover {
   cursor: pointer;
@@ -53,7 +54,7 @@ body {
   animation: shockwave 1s ease-in infinite;
 }
 .clap svg {
-  width: 40px;
+  width: 25px;
   fill: none;
   stroke: #27ae60;
   stroke-width: 2px;
@@ -130,18 +131,7 @@ body {
   <span id="clap--count-total" class="clap--count-total"></span>
 </button>
 
-<aside id="message">In case you didn't know, you gotta click the clap button above 😎😜😜 
-  <br />
-  👉🏻 Press down the button for some more fun!
-  <br />
-  
-  <a href="https://twitter.com/OhansEmmanuel" target="_blank">via @ohansemmanuel</a>
-  <br/>
-  <a href="https://codepen.io/ohansemmanuel/full/zEJpYy/" 
-     target="_blank">
-    See ReactJS implementation
-  </a>  
-</aside>
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mo-js/0.288.1/mo.min.js'></script>  
 
 <script id="rendered-js">
@@ -211,10 +201,10 @@ const countTotalAnimation = new mojs.Html({
 const scaleButton = new mojs.Html({
   el: '#clap',
   duration: tlDuration,
-  scale: { 1.3: 1 },
+  scale: { 1: 0.75 },
   easing: mojs.easing.out });
 
-clap.style.transform = "scale(1, 1)"; /*Bug1 fix*/
+clap.style.transform = "scale(0.75, 0.75)"; /*Bug1 fix*/
 
 const animationTimeline = new mojs.Timeline();
 animationTimeline.add([
