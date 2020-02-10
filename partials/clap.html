@@ -11,7 +11,7 @@
 body {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /*justify-content: center;*/
   /*min-height: 100vh;*/
   overflow: hidden;
 }
@@ -81,9 +81,9 @@ body {
   font-size: 0.8rem;
   width: 80px;
   text-align: center;
-  left: 0;
-  top: -22.8571428571px;
-  color: #bdc3c7;
+  left: 32px;
+  top: 18px;
+  color: #4d5053;
 }
 
 /*====================
@@ -246,6 +246,12 @@ function updateNumberOfClaps() {
 function generateRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+//show total by default
+window.setTimeout(function() {
+  clapTotalCount.innerHTML = initialNumberOfClaps;
+  animationTimeline.replay();
+}, 500);
 
 /*====== TODO ==========
   1. Bug fix. The button shouldn't 
